@@ -1,45 +1,125 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cek Nilai Siswa</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Nilai Siswa</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div id="page-login" class="page active">
-  <div class="login-wrap card">
-    <h3>CEK NILAI SISWA</h3>
-    <p>X RPL 1 - SMK Taruna Bhakti</p><br>
-    <input id="username" placeholder="Username">
-    <input id="pass" type="password" placeholder="Password">
-    <button onclick="login()">LOGIN</button>
-    <p id="login-msg"></p>
-  </div>
-</div>
-<div id="page-dashboard" class="page">
-  <nav>Cek Nilai <button class="btn-kecil merah" onclick="logout()">Logout</button></nav>
-  <div class="container">
-    <div class="card">
-      <h4>Input Nilai Untuk Dicek</h4>
-      <input id="in-nama" placeholder="Nama Siswa">
-      <select id="in-mapel"><option>Pemrograman Dasar</option><option>Basis Data</option><option>Desain Grafis</option></select>
-      <input id="in-nilai" type="number" placeholder="Nilai 0-100">
-      <button onclick="cekNilaiBaru()">Cek Grade</button>
-      <div id="hasil-baru" class="hasil-box"></div>
+
+    <div id="page-login" class="page active">
+     <div class="login-wrap card">
+
+            <h3>CEK NILAI SISWA</h3>
+            <p>X RPL 1 - SMK Taruna Bhakti</p>
+                <br>
+            <input
+                id="username"
+                type="text"
+                placeholder="Username"
+            >
+
+            <input
+                id="pass"
+                type="password"
+                placeholder="Password"
+            >
+
+            <button onclick="login()">LOGIN</button>
+             <p id="login-msg"></p>
+
+        </div>
+
     </div>
-    <div class="card">
-      <h4>Riwayat Cek</h4>
-      <table><thead><tr>
-        <th>Nama</th>
-        <th>Mapel</th>
-        <th>Nilai</th>
-        <th>Grade</th>
-        <th>Status</th></tr></thead><tbody id="tbody-nilai"></tbody></table>
-      <div class="nilai-akhir-box">Total: <b id="txt-akhir">0</b></div>
+
+    <div id="page-dashboard" class="page">
+
+        <nav>
+            <button
+                class="btn-kecil merah"
+                onclick="logout()"
+            >
+                Logout
+            </button>
+        </nav>
+
+
+        <div class="container">
+
+            <div class="card">
+            <h4>Input Nilai Untuk Dicek</h4>
+
+                <input
+                    id="in-nama"
+                    type="text"
+                    placeholder="Nama Siswa"
+                >
+
+
+                <select id="in-mapel">
+
+                    <option value=""> Pilih Mata Pelajaran</option>
+                    <option value="Pemrograman Dasar">Pemrograman Dasar</option>
+                    <option value="Basis Data">Basis Data</option>
+                    <option value="Desain Grafis">Desain Grafis</option>
+                    <option value="Bahasa Indonesia">Bahasa Indonesia</option>
+
+                </select>
+                <input
+                    id="in-nilai"
+                    type="number"
+                    min="0"
+                    max="100"
+                    placeholder="Nilai 0-100"
+                >
+        <button onclick="cekNilaiBaru()">Cek Grade</button>
+
+                <div
+                    id="hasil-baru"
+                    class="hasil-box"
+                ></div>
+
+            </div>
+
+            <div class="card">
+
+                <h4>Riwayat Cek</h4>
+                <div class="table-wrapper">
+                <table>
+                <thead>
+                   <tr>
+                <th>Nama</th>
+                <th>Mapel</th>
+                <th>Nilai</th>
+                <th>Grade</th>
+                <th>Status</th>
+                    </tr>
+
+                </thead>
+
+
+                    <tbody id="tbody-nilai">
+                         </tbody>
+                         </table>
+
+                </div>
+                <div class="nilai-akhir-box">
+                    Total:
+                <b id="txt-akhir">0</b>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
-  </div>
-</div>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
